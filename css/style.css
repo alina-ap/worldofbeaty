@@ -14,7 +14,7 @@ html {
 
 html,
 body,
-.body-wrapper {
+.wrapper {
     height: 100%;
 }
 
@@ -25,12 +25,12 @@ body {
     color: #333333;
 }
 
-.body-wrapper {
+.wrapper {
     display: flex;
     flex-direction: column;
 }
 
-main {
+.main {
     flex: 1;
 }
 
