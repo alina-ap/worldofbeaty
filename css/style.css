@@ -67,7 +67,7 @@ a:hover, :focus{
     height: 597px;
 }
 
-.header-top {
+.header__top {
     display: flex;
     max-width: 1110px;
     justify-content: space-between;
@@ -75,7 +75,7 @@ a:hover, :focus{
     margin: 0;
 }
 
-.header-logo {
+.header__logo {
     margin: 0 0 16px 2px;
     padding: 0;
     font-weight: 700;
@@ -85,30 +85,30 @@ a:hover, :focus{
 
 /* Навигация */
 
-.nav-list li {
+.header__nav .navigation__list {
+    padding: 6px 0 0;
+    margin: 0;
+}
+
+.navigation__item {
     padding: 0;
     margin: auto 0;
     display: inline-block;
     
 }
 
-.nav-list-item a {
+.navigation__link {
     display: block;
     margin-right: 28px;
 }
 
-.nav-list-item:nth-last-child(1) {
+.navigation__item:nth-last-child(1) {
     margin-right: 0;
 }
 
-.nav-list-item-header a {
+.header__nav .navigation__link {
     font-size: 14px;
     line-height: 17px;
-}
-
-.nav-list-header {
-    padding: 6px 0 0;
-    margin: 0;
 }
 
 /* header main */
@@ -120,14 +120,14 @@ a:hover, :focus{
     top: 195px;
 }
 
-.header-tel {
+.header__phone {
     display: flex;
     flex-direction: column;
     text-align: right;
     
 }
 
-.header-tel .tel {
+.header-phone__number {
     display: inline-block;
     margin-bottom: 8px;
     font-weight: 500;
@@ -136,7 +136,7 @@ a:hover, :focus{
     padding: 0;
 }
 
-.header-tel p {
+.header-phone__schedule {
     display: inline-block;
     padding: 0;
     margin: 0;
@@ -144,13 +144,13 @@ a:hover, :focus{
     line-height: 14px;
 }
 
-.hero p {
+.hero__subtitle {
     padding: 0;
     margin: 0;
     margin-bottom: 60px;
 }
 
-.header .social {
+.social--vertical {
     position: absolute;
     right: 0;
     top: 50%;
@@ -158,7 +158,7 @@ a:hover, :focus{
     z-index: 1;
 }
 
-.header-girl {
+.header__girl {
     position: absolute;
     max-width: 524px;
     width: 80%;
@@ -166,13 +166,13 @@ a:hover, :focus{
     bottom: 0;
 }
 
-.header-girl img{
+.header__girl img{
     position: relative;
     z-index: 1;
     display: block;
     bottom: 0;
 }
-.header-girl::before{
+.header__girl::before{
     content: '';
     width: 472px;
     height: 462px;
@@ -185,7 +185,7 @@ a:hover, :focus{
     
 }
 
-/* Кнопки */
+/* Buttons */
 
 .btn {
     display: inline-block;
@@ -194,18 +194,27 @@ a:hover, :focus{
     font: inherit;
     font-style: normal;
     font-weight: 500;
+    line-height: 14px;
     background: #FB9475;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
-.btn-large {
+.btn--large {
     padding: 1.2em 2.2em;
     border-radius: 24px;
     font-size: 14px;
-    line-height: 14px;
 }
 
-/* main */
+.btn--small {
+    font-size: 12px;
+    line-height: 14px;
+    border-radius: 17px;
+    max-width: 112px;
+    padding: 10px 20px;
+}
+
+/* Headings */
 
 h1, 
 h2,
@@ -222,11 +231,20 @@ h1 {
     margin-bottom: 16px;
 }
 
-h2 {
+.section__title {
+    margin: 0;
+    margin-bottom: 32px;
     font-weight: bold;
     font-size: 48px;
     line-height: 59px;
-    
+}
+
+.section__title--small {
+    padding: 0;
+    margin-bottom: 35px;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 44px;
 }
 
 h3 {
@@ -236,84 +254,294 @@ h3 {
     line-height: 22px;
 }
 
+/* Main */
+/* About */
+
 .section {
     padding: 0;
     margin-bottom: 100px;
 }
 
-.about-description-text {
+.section--grey {
+    background-color: #F8F6F7;
+}
+
+.about__description {
     font-size: 20px;
     line-height: 32px;
 }
 
-.about-showmore-link {
+.showmore {
+    cursor: pointer;
+}
+
+.showmore summary {
+    display: inline-block;
     font-size: 14px;
     line-height: 17px;
     color: #278AFF;
+    list-style: none;
+    outline: none;
 }
-.about-video {
-    max-width: 442px;
-    width: 100%;
-    align-self: flex-end;
+
+.showmore > summary::-webkit-details-marker {
+    display: none;
 }
 
 .video {
+    max-width: 442px;
+    width: 100%;
+    height: 295px;
+    border: none;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
-    
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.video-play {
+.about__video {
+    position: relative;
+}
+
+.video:hover::before {
+    opacity: 0.5;
+}
+
+.video:hover::after {
+    opacity: 1;
+}
+
+.video::after,
+.video::before {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
     position: absolute;
-    width: 185px;
-    top: 30%;
-    left: 33%;
+    opacity: 0;
+    transition: .15s opacity;
+}
+.video::before{
+    content: '';
+    background-color: black;
+    z-index: 1;
 }
 
-.video-text {
+.video::after {
+    content: 'Короткое видео о нас';
+    background: url(/img/play-btn.svg) no-repeat;
+    background-position: 50% 30%;
+    font-weight: 500;
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
-    color: #FFFFFF;
+    color: white;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+    align-items: center;
+    justify-content: center;
 }
 
-.video-play-btn {
-    display: block;
-    margin: 0 auto;
-}
+/* Advantages */
 
-.row {
-    justify-content: space-between;
-    align-items: center; 
-}
-
-.description-list-item {
+.advantage {
     max-width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.description-list-item p, 
-.description-list-item h3 {
+.advantage__text, 
+.advantage__title {
     text-align: center;
 }
 
-.description-list-item p {
+.advantage__text {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 22px;
-    padding: 0;
 }
 
-.description-list-item img {
+.advantage__icon {
     order: -1;
     margin-bottom: 32px;
 }
 
+/* Services */
+
+.services-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.services-item__img {
+    order: -1;
+    max-height: 180px;
+    max-width: 350px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.services-item__description {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+/* Prices */
+
+.pricelist-nav {
+    display: flex;
+}
+
+.prices__nav {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 57px;
+}
+
+.pricelist-nav__link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.pricelist-nav__link:active,
+.pricelist-nav__link:visited {
+    border-bottom: 2px solid #00BF78;;
+}
+
+.pricelist-nav__item:not(:last-of-type){
+    padding-right: 28px;
+}
+
+.prices__list {
+    margin: 0;
+    padding: 0;
+    width: 100%; 
+    max-width: 1015px;
+}
+
+.services-price__item {
+    display: flex;
+    max-width: 444px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.services-price__cost {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #00BF78;
+}
+
+/* Мasters */
+
+.masters__title {
+    padding-top: 80px;
+}
+
+.masters--wrapper {
+    padding-bottom: 80px;
+}
+.master-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.master-card__photo {
+    height: 300px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.master-card__photo:hover::before {
+    opacity: 0.5;
+}
+
+.master-card__photo:hover::after {
+    opacity: 1;
+}
+
+.master-card__photo::after,
+.master-card__photo::before {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+    opacity: 0;
+    transition: .15s opacity;
+}
+.master-card__photo::before{
+    content: '';
+    background-color: black;
+    z-index: 1;
+}
+
+.master-card__photo::after {
+    content: 'Записаться к мастеру';
+    font-weight: 500;
+    color: white;
+    display: flex;
+    max-width: 120px;
+    margin: auto;
+   
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.services-price__description,
+.master-card__description {
+    margin: 0;
+}
+
+.master-card__name,
+.services-price__name {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.services-price__details, 
+.master-card__type {
+    margin: 0;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 20px;
+}
+
+
+.master-card__experience {
+    margin: 0;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+}
+
 /* Футер */
 
-.footer-copyright {
+.footer__copyright {
     display: flex;
     flex-direction: column;
     margin: 20px 0;
@@ -322,25 +550,25 @@ h3 {
     line-height: 15px;
 
 }
-.footer-copyright p {
+.copyright__company {
     margin: 0;
     margin-bottom: 8px;
 }
 
 
-.footer-copyright a {
+.copyright__politics {
     color: #278AFF;
     text-decoration-line: underline;
 }
 
-.nav-list-footer {
+.footer__nav {
     padding: 0;
     margin: 32px 0;
     display: flex;
     justify-content: space-between;
 }
 
-.nav-list-item-footer a {
+.footer__nav .navigation__link {
     font-size: 12px;
     line-height: 15px;
 }
