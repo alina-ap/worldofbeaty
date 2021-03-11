@@ -19,10 +19,16 @@ body,
 }
 
 body {
+    min-width: 320px;
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     line-height: 26px;
     color: #333333;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
 }
 
 .wrapper {
@@ -73,6 +79,8 @@ a:hover, :focus{
     justify-content: space-between;
     width: 100%;
     margin: 0;
+    position: relative;
+    z-index: 3;
 }
 
 .header__logo {
@@ -111,11 +119,11 @@ a:hover, :focus{
     line-height: 17px;
 }
 
-/* header main */
+/* header content */
 
 .header .hero {
     position: relative;
-    z-index: 1;   
+    z-index: 2;   
     max-width: 486px;
     top: 195px;
 }
@@ -160,13 +168,19 @@ a:hover, :focus{
 
 .header__girl {
     position: absolute;
-    max-width: 524px;
-    width: 80%;
     right: 90px;
     bottom: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: 0.3s opacity;
 }
 
-.header__girl img{
+.header-girl {
+    max-width: 524px;
+    width: 100%;
+}
+
+.header-girl__img {
     position: relative;
     z-index: 1;
     display: block;
@@ -185,7 +199,76 @@ a:hover, :focus{
     
 }
 
+.header__hamb {
+    display: none;
+}
+
+/* Adaptive header */
+
+/* Large Devices, Wide Screens */ 
+@media only screen and (max-width: 1280px) { 
+} 
+/* Medium Devices, Desktops */ 
+@media only screen and (max-width: 992px) { 
+} 
+/* Small Devices, Tablets */ 
+@media only screen and (max-width: 768px) { 
+    .header__girl {
+        opacity: 0.5;
+    }
+
+    .header__hamb {
+        display: block;
+    }
+    
+    .header__nav {
+        display: none;
+    }
+} 
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width: 480px) { 
+} 
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width: 320px) { 
+}
 /* Buttons */
+
+.header__hamb {
+    width: 35px;
+    height: 20px;
+    position: relative;
+    outline: none;
+    border: none;
+}
+
+.hamb__inner {
+    position: absolute;
+    background-color: grey;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    top: 8px;
+    border-radius: 3px;
+}
+
+.header__hamb::before,
+.header__hamb::after {
+    position: absolute;
+    content: '';
+    background-color: grey;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    border-radius: 3px;
+}
+
+.header__hamb::before {
+    top: 0;
+}
+
+.header__hamb::after {
+    bottom: 0;
+}
 
 .btn {
     display: inline-block;
