@@ -97,6 +97,7 @@
         display: flex;
         flex-wrap: wrap;
         margin: 10px 30px;
+        margin-bottom: 140px;
         justify-content: space-between;
         align-items: flex-end;
     }
@@ -107,9 +108,9 @@
     }
 
     .header__hero {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        position: static;
+        text-align: center;
+        max-width: none;
     }
 
     .hero__title {
@@ -120,20 +121,9 @@
     }
     
     .hero__subtitle {
-        position: absolute;
-        left: 45%;
-        transform: translateX(-40%);
-        margin: 0;
         text-align: center;
         white-space: nowrap;
     }
-
-     .btn--large {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-48%);
-        top: 160%;
-    } 
 
      .social--vertical {
         display: flex;
@@ -172,7 +162,9 @@
     }
 
     .header__hero {
-        position: absolute;
+        position: static;
+        text-align: center;
+        margin: 0 10px;
     }
 
     .hero__title {
@@ -183,6 +175,9 @@
     }
     
     .header__hamb {
+        padding: 0;
+        position: absolute;
+        top: 0;
         display: inline-block;
         margin: 4px 5px 0 0;
         align-self: center;
@@ -202,25 +197,16 @@
         display: inline-flex;
         flex-wrap: wrap;
         gap: 20px;
-        margin: 10px 30px;
+        margin: 10px 30px 50px;
         justify-content: space-between;
         align-items: flex-end;
     }
 
     .hero__subtitle {
-        position: absolute;
-        left: 40%;
-        transform: translateX(-40%);
-        margin: 0;
-        text-align: center;
         white-space: nowrap;
     }
 
-    .btn--large {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 135%;
+    .hero__btn {
         white-space: nowrap;
     }
 
@@ -246,7 +232,7 @@
         transform: translateX(-40%);
     }
 
-    .btn--large {
+    .hero__btn {
         position: absolute;
         left: 50%;
         transform: translateX(-48%);
