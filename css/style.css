@@ -16,13 +16,21 @@ html,
 body,
 .wrapper {
     height: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
+    min-width: 320px;
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     line-height: 26px;
     color: #333333;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
 }
 
 .wrapper {
@@ -64,18 +72,21 @@ a:hover, :focus{
     position: relative;
     overflow: hidden;
     padding: 30px 0 130px;
-    height: 597px;
+    min-height: 597px;
 }
 
 .header__top {
     display: flex;
     max-width: 1110px;
     justify-content: space-between;
-    width: 100%;
     margin: 0;
+    position: relative;
+    z-index: 3;
 }
 
+
 .header__logo {
+    display: inline-block;
     margin: 0 0 16px 2px;
     padding: 0;
     font-weight: 700;
@@ -88,13 +99,14 @@ a:hover, :focus{
 .header__nav .navigation__list {
     padding: 6px 0 0;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .navigation__item {
     padding: 0;
     margin: auto 0;
     display: inline-block;
-    
 }
 
 .navigation__link {
@@ -111,24 +123,23 @@ a:hover, :focus{
     line-height: 17px;
 }
 
-/* header main */
+/* header content */
 
-.header .hero {
+.header__hero {
     position: relative;
-    z-index: 1;   
+    z-index: 2;   
     max-width: 486px;
     top: 195px;
 }
 
-.header__phone {
+.header-phone {
     display: flex;
     flex-direction: column;
     text-align: right;
-    
 }
 
-.header-phone__number {
-    display: inline-block;
+.header-phone__number { 
+    margin: 0;
     margin-bottom: 8px;
     font-weight: 500;
     font-size: 18px;
@@ -137,7 +148,6 @@ a:hover, :focus{
 }
 
 .header-phone__schedule {
-    display: inline-block;
     padding: 0;
     margin: 0;
     font-size: 11px;
@@ -160,18 +170,25 @@ a:hover, :focus{
 
 .header__girl {
     position: absolute;
-    max-width: 524px;
-    width: 80%;
     right: 90px;
     bottom: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: 0.3s opacity;
 }
 
-.header__girl img{
+.header-girl {
+    max-width: 524px;
+    width: 100%;
+}
+
+.header-girl__img {
     position: relative;
     z-index: 1;
     display: block;
     bottom: 0;
 }
+
 .header__girl::before{
     content: '';
     width: 472px;
@@ -185,7 +202,48 @@ a:hover, :focus{
     
 }
 
+.header__hamb {
+    display: none;
+}
+
 /* Buttons */
+
+.header__hamb {
+    width: 35px;
+    height: 20px;
+    position: relative;
+    outline: none;
+    border: none;
+}
+
+.hamb__inner {
+    position: absolute;
+    background-color: grey;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    top: 8px;
+    border-radius: 5px;
+}
+
+.header__hamb::before,
+.header__hamb::after {
+    position: absolute;
+    content: '';
+    background-color: grey;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    border-radius: 5px;
+}
+
+.header__hamb::before {
+    top: 0;
+}
+
+.header__hamb::after {
+    bottom: 0;
+}
 
 .btn {
     display: inline-block;
@@ -222,7 +280,7 @@ h3 {
     margin: 0;
 }
 
-h1 {
+.hero__title {
     max-width: 486px;
     width: 100%;
     font-weight: 600;
@@ -360,6 +418,7 @@ h3 {
 .advantage__text, 
 .advantage__title {
     text-align: center;
+
 }
 
 .advantage__text {
