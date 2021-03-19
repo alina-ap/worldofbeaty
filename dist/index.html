@@ -5,11 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="./css/normalize.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/adaptive.css">
+    <link rel="stylesheet" href="./css/main.css">
     <title>Мир красоты</title>
 </head>
 <body>
@@ -258,7 +256,7 @@
             <section class="section section--grey masters--wrapper">
                 <div class="container">
                     <h2 class="section__title masters__title">Мастера</h2>
-                    <p class="masters__subtitle">Дружная команда настоящих профессионалов</p>
+                    <p class="section__subtitle">Дружная команда настоящих профессионалов</p>
                     <div class="row">
                         <div class="col-lg-3 col-md-4 col-sm-12">
                             <article class="master-card">
@@ -301,6 +299,90 @@
                             </article>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section class="section carousel">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <h2 class="section__title carousel__title">Наши работы</h2>
+                        <div class="carousel__btns">
+                            <button class="carousel-btn carousel-btn--prev" type="button" id="prev"></button>
+                            <button class="carousel-btn carousel-btn--next"type="button" id="next"></button>
+                        </div>
+                    </div>
+                
+                
+                    <div class="row">
+                        <div class="carousel">
+                            <div class="col-3">
+                                <div class="carousel__photo" style="background-image: url(./img/gallery1.jpg);"></div>
+                            </div>
+                            <div class="col-3">
+                                <div class="carousel__photo" style="background-image: url(./img/gallery2.jpg);"></div>
+                            </div>
+                            <div class="col-3">
+                                <div class="carousel__photo" style="background-image: url(./img/gallery3.jpg);"></div>
+                            </div>
+                            <div class="col-3">
+                                <div class="carousel__photo" style="background-image: url(./img/gallery4.jpg);"></div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section brands">
+                <div class="container">
+                    <h2 class="visually-hidden section__title">Бренды</h2>
+                    <p class="section__subtitle brands__subtitle">Бренды, которые мы используем в работе</p>
+                        <ul class="brands-list brands__list">
+                            <li class="brands-list__item"><a class="brands-list__link" href="#"><img class="brands-list__icon" src="./img/image 1.png" alt=""></a></li>
+                            <li class="brands-list__item"><a class="brands-list__link" href="#"><img class="brands-list__icon" src="./img/image 2.png" alt=""></a></li>
+                            <li class="brands-list__item"><a class="brands-list__link" href="#"><img class="brands-list__icon" src="./img/image 3.png" alt=""></a></li>
+                            <li class="brands-list__item"><a class="brands-list__link" href="#"><img class="brands-list__icon" src="./img/image 4.png" alt=""></a></li>
+                            <li class="brands-list__item"><a class="brands-list__link" href="#"><img class="brands-list__icon" src="./img/image 5.png" alt=""></a></li>
+                        </ul>
+                </div>
+            </section>
+
+            <section class="section section--grey">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <h2 class="section__title">Контакты</h2>
+                            <div class="address contacts__address">
+                                <address>Томск, проспект Ленина, дом 13</address>
+                                <a class="address__tel" href="telto:8 (499) 686-17-62">8 (499) 686-17-62</a>
+                                <a class="address__mail" href="mailto:info@more-krasoty.ru">info@more-krasoty.ru</a>
+                            </div>
+                            <div class="contacts-social">
+                                <p class="contacts-social__text">Мы в социальных сетях</p>
+                                <ul class="social social--horizontal">
+                                    <li class="social__item"><a class="social__link" href="#">
+                                        <img src="./img/vk.svg" alt="Вконтакте">
+                                    </a></li>
+                                    <li class="social__item"><a class="social__link" href="#">
+                                        <img src="./img/instagram.svg" alt="Инстаграм">
+                                    </a></li>
+                                    <li class="social__item"><a class="social__link" href="#">
+                                        <img src="./img/youtube.svg" alt="Ютуб">
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="contacts__form col-5">
+                            <form action="#" class="form" method="POST">
+                                <h3 class="form__title">Быстрая запись</h3>
+                                <p class="form__subtitle">Наш менеджер перезвонит в течение нескольких минут, уточнит подробности и согласует время.
+                                </p>
+                                <input class="input-name form__input" type="text" name="name" placeholder="Ваше имя" required>
+                                <input class="input-tel form__input" type="tel" name="tel" placeholder="+7 (___) ___-__-__" required>
+                                <button class="btn btn--large">Записаться</button>
+                                <p class="btn-text">Нажимая на кнопку вы соглашаетесь с <a href="#">обработкой персональных данных</a></p>
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </main>

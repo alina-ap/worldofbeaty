@@ -1,0 +1,47 @@
+.form {
+
+    @include flex-column();
+    max-width: 445px;
+    width: max-content;
+    padding: 40px 35px;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+
+    &__title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 14px;
+    }
+
+    &__subtitle {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &__input {
+        height: 44px;
+        border: 1px solid #D8D8D8;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+    &__input[placeholder] {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 14px;
+        color: #A0A0A0;
+        padding-left: 10px;
+    }
+}
+
+.btn-text {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+
+    & a {
+         @include blue-link();    
+    }
+}
