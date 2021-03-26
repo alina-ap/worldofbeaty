@@ -1,0 +1,75 @@
+
+.services-item {
+    @include flex-column();
+    justify-content: space-between;
+
+    &__img {
+        order: -1;
+        max-height: 180px;
+        max-width: 350px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    &__description {
+        @include text (12px, normal, 20px);
+    }
+}
+
+.pricelist-nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__link {
+        @include text (14px, 500, 17px);
+
+        &:not(:last-of-type){
+            margin-right: 28px;
+        }
+    }
+}
+
+.prices {
+    &__nav {
+        @include zero-space;
+        margin-bottom: 57px;
+    }
+    
+    &__list {
+        @include zero-space;
+        width: 100%; 
+        max-width: 1015px;
+    }
+}
+
+.services-price {
+    &__item {
+        display: flex;
+        max-width: 444px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    &__cost {
+        @include text (20px, 600, 24px);
+        color: $green;
+    }
+}
+
+.services-price__description,
+.master-card__description {
+    margin: 0;
+}
+
+.master-card__name,
+.services-price__name {
+    @include text (18px, 600, 22px);
+    margin-bottom: 8px;
+}
+
+.services-price__details, 
+.master-card__type {
+    @include text (14px, normal, 17px);
+    margin: 0;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,32 @@
+.address {
+    @include text (16px, normal, 20px);
+    @include flex-column();
+
+    address {
+        font-style: normal;
+        font-weight: normal;
+        margin-bottom: 20px;
+    }
+
+    &__tel {
+        margin-bottom: 20px;
+    }
+
+    &__mail {
+        @include blue-link();
+    }
+}
+
+.contacts {
+    &-social__text {
+        @include text (12px, normal, 14px);
+    }
+    
+    &__address {
+        margin-bottom: 2rem;
+    }
+    
+    &__form {
+        margin: 40px 0;
+    }
+}

@@ -1,0 +1,16 @@
+.tabs { 
+    &__links { 
+      .active { 
+        border-bottom: 2px solid $green;
+        cursor: pointer;
+      } 
+    } 
+     
+    &__item { 
+      display: none;
+
+      &.active { 
+        display: block;
+      } 
+    } 
+  }
