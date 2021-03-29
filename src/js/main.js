@@ -1,22 +1,7 @@
 import TabsManager, { TabItem } from './tabs.js';
 
-// Mobile Overlay Menu
-
-const hambMenu = document.querySelector('.hamb');
-const overlayNav = document.getElementById('overlayNav');
-const closeBtn = document.querySelector('.closebtn');
-
-hambMenu.addEventListener('click', event => {
-    overlayNav.style.height = "100%";
-  });
-
-closeBtn.addEventListener('click', event => {
-    overlayNav.style.height = "0%";
-});
-
-// Carousel
-
 $(function () {
+    // Carousel
     $('#carousel').slick({
         infinite: true,
         slidesToShow: 4,
@@ -40,29 +25,43 @@ $(function () {
         }]
     });
     
-});
+    // Mobile Overlay Menu
 
-const tabsElem = document.getElementById('myTabs'); 
-new TabsManager(tabsElem);
+    const hambMenu = document.querySelector('.hamb');
+    const overlayNav = document.getElementById('overlayNav');
+    const closeBtn = document.querySelector('.closebtn');
 
-// Getting Data from Form
+    hambMenu.addEventListener('click', event => {
+        overlayNav.style.height = "100%";
+      });
 
-const form = document.querySelector('form');
-
-form.addEventListener('submit', event => {
-    event.preventDefault();
-
-    const {name, tel} = form.elements;
-
-    const formData = ({
-        name: name.value,
-        tel: tel.value
+    closeBtn.addEventListener('click', event => {
+        overlayNav.style.height = "0%";
     });
+    
+//     Tabs
+   const tabsElem = document.getElementById('myTabs'); 
+   new TabsManager(tabsElem);
+    
+    // Getting Data from Form
 
-    form.reset();
-    console.log(formData);
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+
+        const {name, tel} = form.elements;
+
+        const formData = ({
+            name: name.value,
+            tel: tel.value
+        });
+
+        form.reset();
+        console.log(formData);
+    });
 });
-  
+
 // Smooth Scrolling 
 window.onload = () => {
         const smoothScrollLinks = document.querySelectorAll('.navigation__link'); 
