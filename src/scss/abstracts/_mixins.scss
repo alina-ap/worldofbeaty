@@ -1,0 +1,47 @@
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin absolute-center {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+}
+
+@mixin blue-link {
+    color: $link-blue;
+    text-decoration-line: underline;
+}
+
+@mixin text ($size, $weight, $height) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $height;
+}
+    
+@mixin zero-space {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin respond-to($breakpoint) {
+    $raw-query: map-get($breakpoints, $breakpoint);
+  
+    @if $raw-query {
+      $query: if(
+        type-of($raw-query) == 'string',
+        unquote($raw-query),
+        inspect($raw-query)
+      );
+  
+      @media #{$query} {
+        @content;
+      }
+    } @else {
+      @error 'No value found for `#{$breakpoint}`. '
+           + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+}

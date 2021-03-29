@@ -1,0 +1,36 @@
+.about__description {
+    @include text (20px, normal, 32px);
+}
+
+.showmore {
+    cursor: pointer;
+
+    & summary {
+        display: inline-block;
+        @include text (14px, normal, 17px);
+        color: $link-blue;
+        list-style: none;
+        outline: none;
+    }
+
+}
+
+.showmore > summary::marker {
+    display: none;
+}
+
+.advantage {
+    max-width: 350px;
+    @include flex-column();
+    align-items: center;
+    text-align: center;
+
+    &__text {
+        @include text (14px, normal, 22px);
+    }
+    
+    &__icon {
+        order: -1;
+        margin-bottom: 32px;
+    }
+}

@@ -10,14 +10,11 @@
     border-radius: 8px;
 
     &__title {
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 14px;
+        @include text (18px, 600, 14px);
     }
 
     &__subtitle {
-        font-size: 14px;
-        line-height: 20px;
+        @include text (14px, normal, 20px);
     }
 
     &__input {
@@ -28,19 +25,15 @@
     }
 
     &__input[placeholder] {
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 14px;
+        @include text (14px, normal, 14px);
         color: #A0A0A0;
         padding-left: 10px;
     }
 }
 
 .btn-text {
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 15px;
-
+    @include text (12px, 300, 15px);
+    
     & a {
          @include blue-link();    
     }

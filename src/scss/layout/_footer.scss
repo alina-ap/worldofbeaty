@@ -1,0 +1,30 @@
+.footer {
+    &__copyright {
+        @include flex-column();
+        margin: 20px 0;
+        padding: 0;
+        @include text (12px, normal, 15px);
+    }
+    
+    .copyright {
+        &__company {
+            margin: 0;
+            margin-bottom: 8px;
+        }
+
+        &__politics {
+           @include blue-link();
+        }
+    }
+   
+    &__nav {
+        padding: 0;
+        margin: 32px 0;
+        display: flex;
+        justify-content: space-between;
+
+            .navigation__link {
+                @include text (12px, normal, 15px);
+            }
+    }
+}
